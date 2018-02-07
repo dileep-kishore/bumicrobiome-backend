@@ -7,12 +7,12 @@ name = "pypi"
 
 [packages]
 
-Flask = "*"
-Flask-RESTful = "*"
-Flask-Migrate = "*"
-Flask-SQLAlchemy = "*"
+flask = "*"
+flask-restful = "*"
+flask-migrate = "*"
+flask-sqlalchemy = "*"
 flask-marshmallow = "*"
-Flask-JWT-Extended = "*"
+flask-jwt-extended = "*"
 marshmallow-sqlalchemy = "*"
 passlib = "*"
 tox = "*"
@@ -20,6 +20,8 @@ tox = "*"
 
 [dev-packages]
 
+mypy = "*"
+pylint = "*"
 
 
 [requires]
