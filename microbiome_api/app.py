@@ -1,7 +1,7 @@
 from flask import Flask
 
 from microbiome_api import auth, api
-from microbiome_api.extensions import db, jwt
+from microbiome_api.extensions import db, jwt, cl
 
 
 def create_app(config=None, testing=False):
@@ -9,7 +9,7 @@ def create_app(config=None, testing=False):
     """
     app = Flask('microbiome_api')
 
-    configure_app(app)
+    configure_app(app, testing)
     configure_extensions(app)
     register_blueprints(app)
 
@@ -35,6 +35,8 @@ def configure_extensions(app):
     """
     db.init_app(app)
     jwt.init_app(app)
+    cl.config_from_object('microbiome_api.celeryconfig')
+    cl.conf.update(app.config)
 
 
 def register_blueprints(app):
