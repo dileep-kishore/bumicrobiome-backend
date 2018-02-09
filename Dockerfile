@@ -1,5 +1,5 @@
 FROM python:3.6
-MAINTAINER Dileep Kishore (dkishore@bu.edu)
+LABEL MAINTAINER="Dileep Kishore (dkishore@bu.edu)"
 
 ENV APP_DIR /home/microbiome_api
 RUN mkdir -p $APP_DIR
@@ -12,4 +12,4 @@ COPY . .
 
 RUN pip install -e .
 
-CMD gunicorn -b 0.0.0.0:8000 --acess-logfile - "microbiome_api.app:create_app()"
+CMD gunicorn -b 0.0.0.0:8000 --access-logfile - "microbiome_api.app:create_app()"
