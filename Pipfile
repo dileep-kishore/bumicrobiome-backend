@@ -1,7 +1,7 @@
 [[source]]
 
 url = "https://pypi.python.org/simple"
-verify_ssl = true
+verify_ssl = false
 name = "pypi"
 
 
@@ -16,12 +16,16 @@ flask-jwt-extended = "*"
 marshmallow-sqlalchemy = "*"
 passlib = "*"
 tox = "*"
+celery = "*"
+gunicorn = "*"
+docker = "*"
 
 
 [dev-packages]
 
 mypy = "*"
 pylint = "*"
+ipython = "*"
 
 
 [requires]
