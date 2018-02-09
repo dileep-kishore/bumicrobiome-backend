@@ -15,7 +15,8 @@ blueprint = Blueprint('auth', __name__, url_prefix='/auth')
 
 @blueprint.route('/login', methods=['POST'])
 def login():
-    """Authenticate user and return token
+    """
+        Authenticate user and return token
     """
     if not request.is_json:
         return jsonify({"msg": "Missing JSON in request"}), 400

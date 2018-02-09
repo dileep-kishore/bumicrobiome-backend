@@ -17,7 +17,8 @@ class UserSchema(ma.ModelSchema):
 
 
 class UserResource(Resource):
-    """Single object resource
+    """
+        Single object resource
     """
     method_decorators = [jwt_required]
 
@@ -44,7 +45,8 @@ class UserResource(Resource):
 
 
 class UserList(Resource):
-    """Creation and get_all
+    """
+        Creation and get_all
     """
     method_decorators = [jwt_required]
 
