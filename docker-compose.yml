@@ -1,0 +1,26 @@
+# Copied for reference
+version: "3"
+flask:
+  build: .
+  command: "python3 app.py"
+  ports:
+      - '5000:5000'
+  links:
+      - redis
+      - celery
+  volumes:
+      - .:/usr/src/app:ro
+
+celery:
+  build: .
+  command: "celery -A app.celery worker --loglevel=info"
+  user: nobody
+  links:
+      - redis
+  volumes:
+      - .:/usr/src/app:ro
+
+redis:
+  image: redis
+  ports:
+      - '6379:6379'
